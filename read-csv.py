@@ -29,6 +29,6 @@ for index, row in df.iterrows():
 
         else: 
             print(f"No song id found for {track_name} by {artist}")
-            # todo: delete that row from the csv
-            continue
+            df = df.drop(index)
+            df.to_csv('trackanalysis.csv', index=False)
 
